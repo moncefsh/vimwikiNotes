@@ -1,0 +1,27 @@
+Undo: u ,or run :undo
+redo: Ctrl-R or run :redo
+UNDO: U bypasses all the intermediary changes and goes to the original state when you started (an empty line)
+	 In addition, since UNDO actually creates a new change in Vim, you can UNDO your UNDO. U followed by U will undo itself
+	 You can press U, then U, then U, etc. You will see the same two text states toggling back and forth.
+	 
+	 
+Breaking the block of a Change :
+	Luckily, you can break the undo blocks
+	 When you are typing in insert mode, pressing Ctrl-G u creates an undo breakpoint.
+	 For example, if you do ione <Ctrl-G u>two <Ctrl-G u>three<Esc>, then press u, you will only lose the text "three" (press u one more time to remove "two")
+	 When you write a long text, use Ctrl-G u strategically.
+	 The end of each sentence, between two paragraphs, or after each line of code are prime locations to add undo breakpoints to make it easier to undo your mistakes if you ever make one.
+	 To traverse each undo tree nodes, you can use g+ to go to a newer state and g- to go to an older state.
+	 The difference between u, Ctrl-R, g+, and g- is that both u and Ctrl-R traverse only the main nodes in undo tree while g+ and g- traverse all nodes in the undo tree
+	
+presistent undo:
+	we can creat a file that save undo history of a file , by using the :wundo {my-undo-file} command
+	ex : wundo! undo.wiki.undo
+	then we can reload undo history in any session on that file , by runing the command : rundo undo.wiki.undo
+	adding this to vimrc will automate the process 
+	set undodir=~/.vim/undo_dir
+	set undofile
+	nt: i didn't add it.
+	
+we can use the commands earlier and later with a time argument to go to the state of text at certain time from current state of the text .
+it also take count as argument . to see when the last changes were made use the :undolist command.

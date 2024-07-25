@@ -1,0 +1,16 @@
+you can use the dot command by pressing the dot key (.).
+it repeat your last change 
+
+waht is a change :
+	Any time you update (add, modify, or delete) the content of the current buffer, you are making a change. 
+	The exceptions are updates done by command-line commands (the commands starting with :) do not count as a change.
+	loo ,hh, jjjk , jklk, (a simple for trying the commands , remebre to undo changes)
+	
+	A change excludes motions because it does not update buffer content. 
+	The command f,x consisted of two actions: the command f, to move the cursor to "," and x to delete a character. 
+	Only the latter, x, caused a change. Contrast that with df, which a derctive from te delete operation d
+	Every action from the moment you press the insert command operator until you exit the insert command  is considered as a change.
+	
+	Visual mode operation can be used to target multiple lines as part of a change.
+	
+

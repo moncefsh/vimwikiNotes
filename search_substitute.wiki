@@ -1,0 +1,35 @@
+in my vimrc we did set ignorecase smartcase , so that search will be case sensitive only in the case were there is an upercase in the search pattern . in case we want to search for a all lower case word of phrase we use \C to indecate that the search term will be case sensitive . ex: /\Chello : gonna search for only hello (ignore things like Hello , or HELLO ..)
+
+
+
+//: repeat the last search.
+\|: or 
+/starting_pattern\zssomething\zeending_pattern: match the whole pattern exept for the zs ze but only highlight something
+	
+range search:
+	[] used to sepecify the range of character you want to search for .
+	/[a-o] gonna search for any alph between a and o .
+	to do a negative search we can use [^] .
+	nt: ^ outside the[] (/^) search in the firstb character in a line .
+	
+serach for repeating characters:
+	we can pass count to our search (should be escaped)
+	and it's placed after a single char we want to increment.
+	* exact match \{\}
+	* in range match \{m,\}
+	* up-to match \{,\}
+	* at-least match \{n\}
+the count arguments \{0,\}(zero or more) and \{1,\} (one or more), are common search patterns and vim has special operators for them * and \+.
+
+predefined character ranges:
+
+\d    Digit [0-9]
+\D    Non-digit [^0-9]
+\s    Whitespace character (space and tab)
+\S    Non-whitespace character (everything except space and tab)
+\w    Word character [0-9A-Za-z_]
+\l    Lowercase alphas [a-z]
+\u    Uppercase character [A-Z]
+
+:h /character-classes for more.
+

@@ -1,0 +1,35 @@
+= vim notes =
+	* [[windows_buffers_tabs]]
+	* [[search]] 
+	* [[fzf]]
+	* [[vim grammar]]
+	* [[moving]]	
+	* [[insert mode]]
+	* [[dot commands]]
+	* [[registers]]
+	* [[macros]]
+	* [[undo]]	
+  	* [[visual_mode]]	
+	* [[search_substitute]]
+= school =
+	* [[managment]]
+	* 
+
+
+
+
+
+
+= music =
+	* [[albums_list]]
+	* [[must_listen1001]]
+	* [[done_list]]
+
+
+
+
+= movies =
+	* [[movies_list]]
+	* [[movies_piority_list]]
+	* [[watch_list]]
+	

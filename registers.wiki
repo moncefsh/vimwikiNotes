@@ -1,0 +1,88 @@
+ vim's 10 register types 
+ 	1- unnamed register ("").
+	2- the numbered registers ("0-9)
+	3- the smalldelete register ("-)
+	4- the named registers ("a-z)
+	5- the read-only registers(":,"., and "%)
+	6- the alternate file register ("#)
+	7- the expression register ("#)
+	8- the selection register ("* and "+)
+	9-the black hole register ("_ )
+	10-the last search pattern register ("/).
+
+
+register operators:
+	to use register we need to store something on them 
+	those operators can do that 
+	y    Yank (copy)
+	c    Delete text and start insert mode
+	d    Delete text
+
+	To paste a text from registers, you can use:
+	p Paste the text after cursor
+	P Paste the text before the cursor
+	Both p and P accept a count and a register symbol as arguments
+	 10"ap will past ten time text from register a
+
+to call a register from insert mode use 
+	Ctrl-R a 
+	where a is the register symbol
+
+1- unnamed register 
+	 It stores the last text you yanked, changed, or deleted. 
+	 If you do another yank, change, or delete,Vim will automatically replace the old text.
+	 by default , p and P are connected to the unnmaed register 
+
+2- numbered register 
+	Numbered registers automatically fill themselves up in ascending order. 
+	There are 2 different numbered registers: the yanked register (0) and the numbered registers (1-9).
+
+	a-the yanked register ("0)
+		When you yank a different text, Vim will update both the yanked register and the unnamed register. 
+		Any other operations (like delete) will not be stored in register 0
+	b- non-zero
+		When you change or delete a text that is at least one line long,
+		that text will be stored in the numbered registers 1-9 sorted by the most recent.
+		Small deletions like a word deletion (dw) or word change (cw) do not get stored in the numbered registers.
+		NT: these numbered registers are automatically incremented when using the dot command.
+
+3-the small delete register
+	Changes or deletions less than one line are not stored in the numbered registers 0-9, but in the small delete register ("-)
+	NT: ther is only one 
+
+
+4- the named register 
+	we can store yanked, changed, and deleted texts into registers a-z,
+	we have to explicitly tell Vim to use the named register.
+	so : "ayiw will  yank a word into the register a
+	if we want to add to an existing named register , we can use it uppercase version
+	ex: if a have the word "ait" we can add "non" by yanking it to "A that way "a have "ait non"
+
+
+5-the read only register 
+	.    Stores the last inserted text
+	:    Stores the last executed command-line
+	%    Stores the name of current file
+	
+
+6-the alternative file register
+	An alternative file is the last file you opened. To insert the name of the alternate file, you can use "#p.
+
+
+7-The Expression Register
+	*** vast subject ***
+	
+
+8-the selecting register
+	Vim has two selection registers: quotestar ("*) and quoteplus ("+). You can use them to access copied text from external programs.
+	Conversely, if you yank a word from Vim with "+yiw or "*yiw, you can paste that text in the external program.
+
+9- the balck hole register
+	To delete a line and not have Vim store the deleted line into any register, use "_dd.
+
+10-the last search patter register 
+	stores the last search pattern / or ?
+
+To view all your registers, use the :register command. To view only registers "a, "1, and "-, use :register a 1 -.
+Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
+

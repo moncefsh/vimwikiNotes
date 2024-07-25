@@ -1,0 +1,41 @@
+With Vim macros, you can record actions and store them inside Vim registers to be executed whenever you need it.
+
+BASIC MACROS:
+	qa                     Start recording a macro in register a
+	q (while recording)    Stop recording macro
+	@a    Execute macro from register a
+	@@    Execute the last executed macros
+	EXAMPLE:
+		qa0gU$Gq
+		this command will start recoding a marco in the register a (qa)
+		goes to the begining of the line (0) and uppercase the from the current 
+		location to the  the end of the line (gU$)
+		then go to the end of the file (G)
+	To replay it, run @a. Just like many other Vim commands, you can pass a count argument to macros
+hello there
+NT: Macro execution automatically ends when it encounters an error.
+
+Command Line Macro:
+	ou can also run :normal @a command line. :normal allows the user to execute any normal mode command passed as argument.
+	 If you want to execute your macro between lines 2 and 3, you can run :2,3 normal @a.
+
+
+
+Executing A Macro Across Multiple Files:
+	: args *.txt  (find all files .txt)
+	: argdo g/keyWord/normal @a (executes the global command g/donut/normal @a on each file insid :args)
+	: argdo update
+	
+recursive macro:
+	qaqqa0W~j@aq
+	this will executr 0W~j(toggele the case of 1st char in the second word of the line)
+	for every line until there is no more line.
+	
+Amending A Macro:
+	to add somethings in the middle of the macro , we can use (put a) to get what in regester a 
+	then add what we want , the use "ayy to put the command back to the regester.
+	Or we can use :let @a="(CTrl-R Ctrl-R a)" (c-R c-R a past the content of reg a) then change the commands . all this in command mode
+	
+	
+parallel  macros:
+	we can use : 1,$ normal @a   . to run the macro a on all the lines of our files.

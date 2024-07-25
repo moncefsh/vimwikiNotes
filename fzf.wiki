@@ -1,0 +1,21 @@
+fzf is used to search files
+synthax
+	^ is a prefix exact match. To search for a phrase starting with "welcome"^:^welcome
+	$ is a suffix exact match. To search for a phrase ending with "my friends": friends$.
+	' is an exact match. To search for the phrase "welcome my friends": 'welcome my friends.
+	| is an "or" match. To search for either "friends" or "foes": friends | foes.
+	! is an inverse match. To search for phrase containing "welcome" and not "friends": welcome !friends
+
+finding files :
+	To search for files inside Vim using fzf.vim plugin, you can use the :Files method. Run :Files from Vim and you will be prompted with fzf search prompt.
+	and you can then use the synthanx to search for the file you need
+	NT: i mapped it here to CTRL-F
+finding in files:
+	To search inside files, you can use the :Rg command.
+	NT: mapped here to <lader>b (\f)
+finding buffers:
+	we use :Buffers
+	mapped to <lader>b 
+	
+
+	

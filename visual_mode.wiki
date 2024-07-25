@@ -1,0 +1,40 @@
+Visual mode types:
+	v character-wise- visual mode
+	V Line-wise visual mode
+	Ctrl-V block-wise visual mode
+
+One
+Two 
+Three
+
+Nav:
+With o or O in visual mode, the cursor jumps from the beginning to the end of the highlighted block, allowing you to expand the highlight area.
+
+
+visual mode and command-line:
+we can selectively apply command-line commands on highlighted text block. 
+selecting few lines and runing :s/old/new/g will change old on thous lines to new
+
+adding text in multiple lines:
+	You can add text on multiple lines in Vim using the block-wise visual mode..
+	by entring the block-wise visual mode and select the lines we need.
+	the inserting text at the last select line by A(entre the text ater the cursor) or I(entre the text before the cursor).
+	by exiting visual mode that adition will bw applyed to all selected lines.
+
+
+selecting the last visual mode area:
+	`<    Go to the first place of the previous visual mode highlight
+	`>    Go to the last place of the previous visual mode highlight
+	
+nt: we can entre visual mode from insert mode using : ctrl-o v 
+
+select mode 
+	gh:  charcter-wise select mode 
+	gH:  line-wise select mode
+	gCtrl-h  block-wise select mode
+
+	Select mode emulates a regular editor's text highlighting behavior closer than Vim's visual mode does.
+	In a regular editor, after you highlight a text block and type a letter,
+	say the letter "y", it will delete the highlighted text and insert the letter "y"
+	
+	

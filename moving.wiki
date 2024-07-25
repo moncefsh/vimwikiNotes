@@ -1,0 +1,95 @@
+[[Characters]] nav
+		h   Left
+		j   Down
+		k   Up
+		l   Right
+
+count:
+	Vim motions accept a preceding numerical argument. 
+	count + motion
+
+word navigation:
+	w     Move forward to the beginning of the next word
+	W     Move forward to the beginning of the next WORD
+	e     Move forward one word to the end of the next word
+	E     Move forward one word to the end of the next WORD
+	b     Move backward to beginning of the previous word
+	B     Move backward to beginning of the previous WORD
+	ge    Move backward to end of the previous word
+	gE    Move backward to end of the previous WORD
+	
+	 A word is a sequence of characters containing only a-zA-Z0-9_. 
+	 A WORD is a sequence of all characters except white space (a white space means either space, tab, and EOL)
+
+Current line navigation:
+	0     Go to the first character in the current line
+	^     Go to the first nonblank char in the current line
+	g_    Go to the last non-blank char in the current line
+	$     Go to the last char in the current line
+	n|    Go the column n in the current line
+	f    Search forward for a match in the same line
+	F    Search backward for a match in the same line
+	t    Search forward for a match in the same line, stopping before match
+	T    Search backward for a match in the same line, stopping before match
+	;    Repeat the last search in the same line using the same direction
+	,    Repeat the last search in the same line using the opposite direction
+	NT: the search command take only one letter as an argument 
+
+
+sentences and paraghraphs:
+	A sentence ends with either . ! ? followed by an EOL, a space, or a tab. 
+	You can jump to the next sentence with ) and the previous sentence with (.
+
+	A paragraph begins after each empty line and also at each set of a paragraph macro 
+	specified by the pairs of characters in paragraphs option.
+	{    Jump to the previous paragraph
+	}    Jump to the next paragraph
+	
+	%    Navigate to another match, usually works for (), [], {}
+	
+Line Number Navigation:
+	gg    Go to the first line
+	G     Go to the last line
+	nG    Go to line n
+	n%    Go to n% in file
+
+Window navigation:
+	H     Go to top of screen
+	M     Go to medium screen
+	L     Go to bottom of screen
+	nH    Go n line from top
+	
+Scrolling:
+	Ctrl-E    Scroll down a line
+	Ctrl-D    Scroll down half screen
+	Ctrl-F    Scroll down whole screen //wont work here i mapped this keys to file search
+	Ctrl-Y    Scroll up a line
+	Ctrl-U    Scroll up half screen
+	Ctrl-B    Scroll up whole screen
+	zt    Bring the current line near the top of your screen
+	zz    Bring the current line to the middle of your screen
+	zb    Bring the current line near the bottom of your screen
+	
+search navigation:
+	/    Search forward for a match
+	?    Search backward for a match
+	n    Repeat last search in same direction of previous search
+	N    Repeat last search in opposite direction of previous search
+	*     Search for whole word under cursor forward
+	#     Search for whole word under cursor backward
+	g*    Search for word under cursor forward
+	g#    Search for word under cursor backward
+	
+marking position:
+	You can use marks to save your current position and return to this position later.
+	ma    Mark position with mark "a"
+	`a    Jump to line and column "a"
+	'a    Jump to line "a"
+	''    Jump back to the last line in current buffer before jump
+	``    Jump back to the last position in current buffer before jump
+	`[    Jump to beginning of previously changed / yanked text
+	`]    Jump to the ending of previously changed / yanked text
+	`<    Jump to the beginning of last visual selection
+	`>    Jump to the ending of last visual selection
+	`0    Jump back to the last edited file when exiting vim
+	

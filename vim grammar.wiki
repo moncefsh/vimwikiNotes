@@ -1,0 +1,59 @@
+Vim grammar rule:
+	verb(operator) + noun(motion)
+operator :
+	there is almost 16 operator in vim , the most frequente used ones are:
+		y    Yank text (copy)
+		d    Delete text and save to register
+		c    Delete text, save to register, and start insert mode
+
+motion:
+	Motions are used to move around in Vim
+	h    Left
+	j    Down
+	k    Up
+	l    Right
+	w    Move forward to the beginning of the next word
+	}    Jump to the next paragraph
+	$    Go to the end of the line
+	0    Go the beginning of the line
+
+Examples:
+	To yank everything from your current location to the end of the line: y$.
+	To delete from your current location to the beginning of the next word: dw.
+	To change from your current location to the end of the current paragraph, say c}.
+
+NT: dont write those commands in command mode, just press them in normal mode
+NT: dont write those commands in command mode, just press them in normal mode
+NT:ng an operator command twice, Vim performs a linewise operation for that action.
+For example, dd, yy, and cc perform deletion, yank, and change on the entire line.
+
+
+Text Objects(another noun):
+	 Texts often come structured. They often contain parentheses, quotes, brackets, braces, and more.
+	 Vim has a way to capture this structure with text objects.
+	 
+	 Text objects are used with operators. There are two types of text objects: inner and outer text objects.
+	 
+	 i + object    Inner text object
+	 a + object    Outer text object
+	Inner text object selects the object inside without the white space or the surrounding objects.
+	Outer text object selects the object inside including the white space or the surrounding objects.
+	Generally, an outer text object always selects more text than an inner text object.
+	If your cursor is somewhere inside the parentheses in the expression (hello Vim):
+	
+	    To delete the text inside the parentheses without deleting the parentheses: di(.
+	    To delete the parentheses and the text inside: da(.
+	list of common text objects
+	w         A word
+	p         A paragraph
+	s         A sentence
+	( or )    A pair of ( )
+	{ or }    A pair of { }
+	[ or ]    A pair of [ ]
+	< or >    A pair of < >
+	t         XML tags
+	"         A pair of " "
+	'         A Pair of ' '
+	a full list in :h text-object
+	
+	
